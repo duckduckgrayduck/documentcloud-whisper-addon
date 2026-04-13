@@ -139,6 +139,7 @@ class Whisper(AddOn):
 
     def main(self):
         """Pulls the variables from UI, checks permissions, and runs the transcription"""
+        self.client.session.headers.update({'User-Agent': 'Transcribe Audio Add-On'})
         url = self.data["url"]
         project_id = self.data.get("project_id")
         access_level = self.data["access_level"]
